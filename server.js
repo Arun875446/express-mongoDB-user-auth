@@ -9,12 +9,7 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 // ✅ Enable CORS
-app.use(
-  cors({
-    origin: 'http://localhost:5173', // frontend origin
-    credentials: true,
-  })
-);
+app.use();
 app.use(express.urlencoded({ extended: true }));
 app.use(users);
 
