@@ -91,7 +91,7 @@ router.delete("/api/users/:id", async (req, res) => {
 router.put("/api/users/:id", async (req, res) => {
   try {
     const updateData = { ...req.body };
-    if (updateData) {
+    if (updateData.password) {
       const salt = await bcrypt.genSalt(10);
       updateData.password = await bcrypt.hash(updateData.password, salt);
     }
